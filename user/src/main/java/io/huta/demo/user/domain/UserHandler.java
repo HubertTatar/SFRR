@@ -23,13 +23,11 @@ public class UserHandler {
     }
 
     public Mono<ServerResponse> createUser(ServerRequest request) {
-        Mono<User> action = request
+        return request
                 .bodyToMono(CreateUser.class)
                 .map(userCreator::fromCmd)
-                .flatMap(userRepository::insert);
-        return ServerResponse
-                .ok()
-                .syncBody(action);
+                .flatMap(userRepository::insert)
+                .flatMap(inserted -> ServerResponse.ok().syncBody(inserted));
     }
 
     public Mono<ServerResponse> getByUsername(ServerRequest request) {

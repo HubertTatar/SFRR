@@ -1,6 +1,6 @@
 package io.huta.demo.user.domain;
 
-import io.huta.demo.user.UserDto;
+import io.huta.demo.user.dto.UserDto;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;

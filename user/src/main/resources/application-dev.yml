@@ -4,5 +4,7 @@ spring:
       host: localhost
       port: 27017
       database: ms-user
+      username: root
+      password: example
 server:
   port: 8092
